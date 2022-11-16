@@ -1,7 +1,7 @@
 use std::fmt::{self, Formatter, Display};
 
-/* Demonstrates printing of a user defined struct using println! macro.*/
-
+/// Demonstrates printing of a user defined struct using println! macro.
+/// Struct for City_location
 struct City {
     name: &'static str,
     // Latitude
@@ -9,7 +9,7 @@ struct City {
     // Longitude
     lon: f32,
 }
-
+/// Display formant for City_Location(struct)
 impl Display for City {
     // `f` is a buffer, this method must write the formatted string into it
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
@@ -22,12 +22,14 @@ impl Display for City {
     }
 }
 
-
+/// Struct for Colors
 struct Color {
     red: u8,
     green: u8,
     blue: u8,
 }
+
+/// Display formant for Color(struct)
 impl Display for Color {
     // `k` is a buffer, this method must write the formatted string into it
     fn fmt(&self, k: &mut Formatter) -> fmt::Result {
@@ -37,7 +39,7 @@ impl Display for Color {
     }
 }
 
-
+/// Main Function
 fn main() {
     for city in [   
         City { name: "Glassboro", lat: 39.702892, lon: -75.111839 },
